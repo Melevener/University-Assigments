@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Страница с изображением{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Заголовок страницы с изображением</h1>
+    <img src="{{ url_for('static', filename='images/pic1.png') }}" alt="Пример изображения">
+    <p>Подпись под изображением: Это пример изображения для страницы.</p>
+</div>
+{% endblock %}

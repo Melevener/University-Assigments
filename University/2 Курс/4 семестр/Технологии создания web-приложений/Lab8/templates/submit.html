@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Задача создана{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Задача создана</h1>
+    <p>Название задачи: {{ task_title }}</p>
+    <p>Название предмета: {{ subject }}</p>
+    <p>Подробное описание задачи: {{ description }}</p>
+    <p>Срок сдачи: {{ deadline }}</p>
+    <p>Статус выполнения: {{ status }}</p>
+</div>
+{% endblock %}

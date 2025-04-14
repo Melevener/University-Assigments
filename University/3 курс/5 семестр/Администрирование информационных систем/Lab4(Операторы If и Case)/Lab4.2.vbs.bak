@@ -1,0 +1,33 @@
+Dim month, season
+
+month = InputBox("Введите номер месяца:", "Ввод месяца")
+
+If IsEmpty(month) Then
+	Wscript.Quit
+End If
+
+month = Replace(month, ".", ",")
+If IsNumeric(month) Then
+	If InStr(month, ".") > 0 Or InStr(month, ",") > 0 Then
+        MsgBox ("Введен неверный тип данных")
+		Wscript.Quit
+	End If
+    
+    If month >= 1 And month <= 12 Then
+        Select Case month
+            Case 12, 1, 2
+                season = "Зима"
+            Case 3, 4, 5
+                season = "Весна"
+            Case 6, 7, 8
+                season = "Лето"
+            Case 9, 10, 11
+                season = "Осень"
+        End Select
+        MsgBox ("Месяц номер " & month & " относится к сезону: " & season)
+    Else
+        MsgBox ("Пожалуйста, введите корректный номер месяца (от 1 до 12).")
+    End If
+Else
+    MsgBox ("Вы не ввели число или ввели не число")
+End If

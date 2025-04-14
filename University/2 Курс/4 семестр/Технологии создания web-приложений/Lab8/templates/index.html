@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<div class="container">
+    {% for task in tasks %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ task.task_title }}</h5>
+            <p class="card-text">{{ task.description }}</p>
+            <p class="card-text"><small class="text-muted">Предмет: {{ task.subject }}</small></p>
+            <p class="card-text"><small class="text-muted">Дедлайн: {{ task.deadline.strftime('%Y-%m-%d') }}</small></p>
+            <p class="card-text"><small class="text-muted">Статус: {{ task.status }}</small></p>
+            <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn btn-secondary">Редактировать</a>
+            <form action="{{ url_for('delete_task', task_id=task.id) }}" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-danger">Удалить</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Bootstrap Компоненты{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Пример Bootstrap Компонентов</h1>
+    <blockquote class="blockquote">
+        <p class="mb-0">Образование - это то, что остается после того, как забывается все выученное в школе.</p>
+        <footer class="blockquote-footer">Альберт Эйнштейн</footer>
+    </blockquote>
+    <div class="card mt-4" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='images/pic1.png') }}" class="card-img-top" alt="Пример изображения">
+        <div class="card-body">
+            <h5 class="card-title">Дневник Студента</h5>
+            <p class="card-text">Наше приложение "Дневник Студента" помогает студентам организовывать учебные заметки, ставить цели на семестр и отслеживать свой прогресс. Пользуйтесь приложением, чтобы улучшить свои академические результаты и достичь поставленных целей!</p>
+            <a href="#" class="btn btn-primary">Узнать больше</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

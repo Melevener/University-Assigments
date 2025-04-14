@@ -1,0 +1,13 @@
+Dim objShell
+Set objShell = CreateObject("WScript.Shell")
+
+On Error Resume Next
+objShell.Exec "cmd /c start WINWORD.EXE"
+
+If Err.Number <> 0 Then
+    MsgBox "Ошибка: Не удалось открыть Microsoft Word. Убедитесь, что программа установлена и доступна."
+Else
+    MsgBox "Microsoft Word был успешно запущен."
+End If
+
+On Error GoTo 0

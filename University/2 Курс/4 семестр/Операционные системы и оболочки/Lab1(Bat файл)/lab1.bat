@@ -1,0 +1,74 @@
+chcp 866
+@echo off
+setlocal
+
+REM Получаем шифр группы и путь к каталогу студентов из командной строки
+set "group_code=%1"
+set "students_dir=%2"
+set "group_students_dir=%students_dir%\%group_code%"
+
+REM Проверяем наличие параметров командной строки
+if "%group_code%"=="" (
+    echo параметр/шифр не указан.
+    pause
+)
+
+if "%students_dir%"=="" (
+    echo параметр/шифр не указан.
+    pause
+)
+
+REM Проверяем существование каталога студентов
+if not exist "%students_dir%" (
+    echo Параметр/шифр введен неверно.
+    pause
+)
+
+REM Проверяем существование каталога группы студентов
+if not exist "%group_students_dir%" (
+    echo Параметр/шифр введен неверно.
+    pause
+)
+
+REM Выводим меню для выбора направления вывода
+:menu
+cls
+echo Выберите направление вывода:
+echo 1. На экран
+echo 2. В файл
+echo 3. На принтер
+set /p choice="Введите номер: "
+
+REM Переходим к соответствующей метке в зависимости от выбора пользователя
+if "%choice%"=="1" goto :print_screen
+if "%choice%"=="2" goto :print_file
+if "%choice%"=="3" goto :print_printer
+
+echo Неверный выбор. Пожалуйста, введите номер от 1 до 3.
+pause
+goto :menu
+
+REM Метка для вывода списка файлов на экран
+:print_screen
+dir "%group_students_dir%"
+echo Список файлов в каталоге студентов (%group_code%) выведен на экран.
+goto :end
+
+REM Метка для вывода списка файлов в файл
+:print_file
+set "output_file=%students_dir%\Список_файлов_%group_code%.txt"
+echo Список файлов в каталоге студентов (%group_code%) будет сохранен в файле "%output_file%".
+dir "%group_students_dir%" > "%output_file%"
+echo Список файлов сохранен в файле "%output_file%".
+goto :end
+
+REM Метка для вывода списка файлов на принтер
+:print_printer
+echo Список файлов в каталоге студентов (%group_code%) будет отправлен на принтер.
+dir "%group_students_dir%" > prn
+echo Список файлов отправлен на принтер.
+goto :end
+
+REM Метка для завершения программы
+:end
+pause

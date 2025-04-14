@@ -1,0 +1,46 @@
+Dim objWord
+Dim objDoc
+Dim filePath
+Dim fileExt
+Dim cleanPath
+Dim isValidInput
+
+Do
+    isValidInput = True
+    filePath = InputBox("Введите полный путь к файлу Word, который вы хотите открыть:", "Открыть Word файл")
+
+    If filePath = False Then
+        WScript.Quit
+    ElseIf filePath = "" Then
+        MsgBox "Путь к файлу не был введен.", vbExclamation, "Ошибка"
+        isValidInput = False
+    Else
+        fileExt = LCase(Right(filePath, Len(filePath) - InStrRev(filePath, ".")))
+        fileExt = Replace(fileExt, " ", "")
+
+        cleanPath = LCase(Left(filePath, InStrRev(filePath, "."))) & fileExt
+
+        If fileExt = "doc" Or fileExt = "docx" Or fileExt = "docm" Or fileExt = "dot" Or fileExt = "dotx" Or fileExt = "dotm" Then
+            If CreateObject("Scripting.FileSystemObject").FileExists(cleanPath) Then
+                On Error Resume Next
+                Set objWord = CreateObject("Word.Application")
+                Set objDoc = objWord.Documents.Open(cleanPath)
+                
+                If Err.Number <> 0 Then
+                    MsgBox "Не удалось открыть файл. " & vbLF & "Возможно, у вас нет прав для доступа к этому файлу.", vbExclamation, "Ошибка"
+                    isValidInput = False
+                    Err.Clear
+                Else
+                    objWord.Visible = True
+                End If
+                On Error GoTo 0
+            Else
+                MsgBox "Файл не найден. Убедитесь, что путь введен правильно.", vbExclamation, "Ошибка"
+                isValidInput = False
+            End If
+        Else
+            MsgBox "Файл должен быть в формате Word (.doc, .docx, .docm, .dot, .dotx, .dotm). Пожалуйста, введите корректный путь.", vbExclamation, "Ошибка"
+            isValidInput = False
+        End If
+    End If
+Loop Until isValidInput

@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+.blue-rectangle {
+    float: left;
+    width: 25vw; 
+    height: 85vh; 
+    background-color: skyblue; 
+}
+
+.orange-rectangle-long {
+    width: 100vw;
+    height: 15vh;
+    background-color: orange;
+}
+
+.green-rectangle-long {
+    width: 100vw;
+    height: 15vh;
+    background-color: green;
+    clear: left;
+}
+
+.yellow-rectangle-big {
+    width: 100vw;
+    height: 70vh;
+    background-color: yellow;
+}
+
+.orange-rectangle-small {
+    width: 15vw;
+    height: 12vh;
+    background-color: orange;
+    margin: 10vh 3vh 0vh 3vh;
+}
+
+.pink-rectangle-small {
+    width: 15vw;
+    height: 12vh;
+    background-color: palevioletred;
+    margin: 3vh 3vh 0vh 3vh;
+}
+
+.grey-rectangle-small {
+    width: 15vw;
+    height: 12vh;
+    background-color: grey;
+    margin: 3vh 3vh 10vh 3vh;
+}

@@ -1,0 +1,61 @@
+Dim numElements, i
+Dim arr()
+Dim result, allStrings
+Dim isValidInput, userInput
+
+Do
+    isValidInput = True
+    numElements = InputBox("Введите количество строк для массива" & vbLF & "(не менее 5 и не более 50):", "Количество строк")
+    
+    If numElements = "" Then
+        WScript.Quit
+    End If
+
+    numElements = Replace(numElements, ".", ",")
+
+    If Not IsNumeric(numElements) Then
+        MsgBox "Введённое значение не подходит!" & vbLF & "Пожалуйста, введите целое число", vbExclamation
+        isValidInput = False
+    Else
+        numElements = CDbl(numElements)
+
+        If (numElements * 10) Mod 10 <> 0 Then
+            If Int(numElements) = numElements Then
+                numElements = Int(numElements)
+            Else
+                MsgBox "Пожалуйста, введите целое число без дробной части!", vbExclamation
+                isValidInput = False
+            End If
+        ElseIf numElements < 5 Then
+            MsgBox "Количество строк должно быть не менее 5.", vbExclamation
+            isValidInput = False
+        ElseIf numElements > 50 Then
+            MsgBox "Вы ввели слишком большое число!" & vbLF & "В окне помещается не более 50 строк", vbCritical
+            isValidInput = False
+        End If
+    End If
+Loop Until isValidInput
+
+ReDim arr(numElements - 1)
+allStrings = ""
+
+For i = 0 To numElements - 1
+    Do
+        userInput = InputBox("Введите текст для строки №" & (i + 1) & ":")
+        
+        If userInput = "" Then
+            If Not IsEmpty(userInput) Then
+                MsgBox "Вы ничего не ввели. Напишите что-нибудь!", vbExclamation
+            Else
+                WScript.Quit
+            End If
+        End If
+        
+        arr(i) = userInput
+    Loop Until arr(i) <> ""
+    allStrings = allStrings & "Строка №" & (i + 1) & ": " & arr(i) & vbLF
+Next
+
+result = Join(arr, " ")
+
+MsgBox "Все строки:" & vbCrLf & allStrings & vbCrLf & "Объединённая строка: " & result

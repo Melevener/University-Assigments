@@ -1,0 +1,10 @@
+Dim strInput
+
+strInput = InputBox(vbLF & "Введите текст:", "Ввод текста", , 9500, 5000)
+
+Kod = MsgBox(strInput, vbOKCancel + vbExclamation, "Собщение с текстом")
+
+Set W = CreateObject("WScript.Shell")
+W.Popup "Была нажата кнопка: " & Kod, 10, "окно Popup библиотеки", VbExclamation
+
+WScript.Quit()

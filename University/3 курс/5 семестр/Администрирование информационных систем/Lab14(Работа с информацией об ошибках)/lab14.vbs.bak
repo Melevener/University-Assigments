@@ -1,0 +1,35 @@
+Dim objShell
+Dim filePath
+Dim fileExt
+Dim cleanPath
+Dim isValidInput
+
+Do
+	isValidInput = True
+	filePath = InputBox("Введите полный путь к редактору Word (.exe), который вы хотите открыть:", "Открыть Word")
+	
+	If filePath = False Then
+		WScript.Quit
+	ElseIf filePath = "" Then
+		MsgBox "Путь к файлу не был введен.", vbExclamation, "Ошибка"
+		isValidInput = False
+		
+	Else
+		fileExt = LCase(Right(filePath, Len(filePath) - InStrRev(filePath, ".")))
+		fileExt = Replace(fileExt, " ", "")
+		cleanPath = Left(filePath, InStrRev(filePath, ".")) & fileExt
+
+		If fileExt = "exe" Then
+			If CreateObject("Scripting.FileSystemObject").FileExists(cleanPath) Then
+				Set objShell = CreateObject("WScript.Shell")
+				objShell.Exec cleanPath
+			Else
+				MsgBox "Файл не найден. Убедитесь, что путь введен правильно.", vbExclamation, "Ошибка"
+				isValidInput = False
+			End If
+		Else
+			MsgBox "Файл должен иметь расширение .exe. Пожалуйста, введите корректный путь.", vbExclamation, "Ошибка"
+			isValidInput = False
+		End If
+	End If
+Loop Until isValidInput

@@ -1,0 +1,1076 @@
+object Form1: TForm1
+  Left = 297
+  Height = 459
+  Top = 222
+  Width = 1015
+  BorderIcons = []
+  Caption = 'Лабораторная работа №3'
+  ClientHeight = 459
+  ClientWidth = 1015
+  DesignTimePPI = 120
+  Menu = MainMenu1
+  OnResize = FormResize
+  LCLVersion = '3.0.0.3'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 488
+    Top = 0
+    Width = 1080
+    ActivePage = TabSheet3
+    TabIndex = 2
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Задача 1'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object Label1: TLabel
+        Left = 352
+        Height = 31
+        Top = 16
+        Width = 392
+        Caption = 'Использование компонента Memo'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+      end
+      object Memo1: TMemo
+        Left = 272
+        Height = 281
+        Top = 56
+        Width = 548
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -23
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ScrollBars = ssAutoVertical
+        TabOrder = 0
+        WordWrap = False
+      end
+      object Button1: TButton
+        Left = 848
+        Height = 47
+        Top = 224
+        Width = 144
+        Caption = 'Вывод'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -23
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 1
+        OnClick = Button1Click
+      end
+      object Button2: TButton
+        Left = 872
+        Height = 31
+        Top = 184
+        Width = 94
+        Caption = 'Очистить'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button2Click
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Задача 2'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object Label2: TLabel
+        Left = 400
+        Height = 31
+        Top = 24
+        Width = 270
+        Caption = 'Введите массив чисел'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 304
+        Height = 157
+        Top = 184
+        Width = 451
+        AutoSize = False
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -23
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+      end
+      object Button3: TButton
+        Left = 611
+        Height = 56
+        Top = 112
+        Width = 144
+        Caption = 'Вычислить'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -23
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+        OnClick = Button3Click
+      end
+      object Button4: TButton
+        Left = 784
+        Height = 31
+        Top = 72
+        Width = 94
+        Caption = 'Очистка'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 1
+        OnClick = Button4Click
+      end
+      object StringGrid1: TStringGrid
+        Left = 304
+        Height = 32
+        Top = 71
+        Width = 451
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        RowCount = 1
+        TabOrder = 2
+        ColWidths = (
+          89
+          90
+          89
+          86
+          93
+        )
+      end
+      object CheckBox1: TCheckBox
+        Left = 304
+        Height = 24
+        Top = 112
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Доп задача 1'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid2: TStringGrid
+        Left = 240
+        Height = 31
+        Top = 96
+        Width = 611
+        ColCount = 7
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        RowCount = 1
+        TabOrder = 0
+        ColWidths = (
+          89
+          90
+          89
+          86
+          93
+          80
+          80
+        )
+      end
+      object CheckBox2: TCheckBox
+        Left = 200
+        Height = 24
+        Top = 136
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+      end
+      object Label4: TLabel
+        Left = 200
+        Height = 157
+        Top = 184
+        Width = 451
+        AutoSize = False
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -23
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+      end
+      object Button5: TButton
+        Left = 675
+        Height = 48
+        Top = 136
+        Width = 176
+        Caption = 'Вычисление максимума'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button5Click
+      end
+      object Button6: TButton
+        Left = 720
+        Height = 31
+        Top = 192
+        Width = 94
+        Caption = 'Очистить'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Button6Click
+      end
+      object Label8: TLabel
+        Left = 383
+        Height = 31
+        Top = 35
+        Width = 298
+        Caption = 'Вычисление максимума'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Доп задача 2'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid3: TStringGrid
+        Left = 264
+        Height = 85
+        Top = 80
+        Width = 531
+        ColCount = 6
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        RowCount = 3
+        TabOrder = 0
+        ColWidths = (
+          89
+          90
+          89
+          86
+          93
+          80
+        )
+      end
+      object CheckBox3: TCheckBox
+        Left = 184
+        Height = 24
+        Top = 216
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+      end
+      object Button7: TButton
+        Left = 432
+        Height = 55
+        Top = 200
+        Width = 248
+        Caption = 'Поиск отрицательных значений'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button7Click
+      end
+      object Button8: TButton
+        Left = 696
+        Height = 32
+        Top = 208
+        Width = 150
+        Caption = 'Очистка'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Button8Click
+      end
+      object Label9: TLabel
+        Left = 304
+        Height = 31
+        Top = 24
+        Width = 468
+        Caption = 'Нахождение отрицательных значений'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Доп задача 5'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid4: TStringGrid
+        Left = 280
+        Height = 247
+        Top = 80
+        Width = 272
+        ColCount = 3
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        RowCount = 9
+        TabOrder = 0
+        ColWidths = (
+          89
+          90
+          89
+        )
+      end
+      object CheckBox4: TCheckBox
+        Left = 264
+        Height = 24
+        Top = 344
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+      end
+      object Button9: TButton
+        Left = 568
+        Height = 55
+        Top = 184
+        Width = 338
+        Caption = 'Количество ненулевых элементов по строкам'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button9Click
+      end
+      object Button10: TButton
+        Left = 352
+        Height = 31
+        Top = 392
+        Width = 94
+        Caption = 'Очистка'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Button10Click
+      end
+      object Label11: TLabel
+        Left = 192
+        Height = 31
+        Top = 16
+        Width = 495
+        Caption = 'Поиск ненулевых элементов по строкам'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'Доп задача 6'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid5: TStringGrid
+        Left = 88
+        Height = 193
+        Top = 23
+        Width = 531
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        ParentFont = False
+        RowCount = 7
+        TabOrder = 0
+        ColWidths = (
+          188
+          90
+          89
+          80
+          80
+        )
+        RowHeights = (
+          27
+          27
+          27
+          27
+          27
+          27
+          27
+        )
+        Cells = (
+          10
+          0
+          1
+          'Москва'
+          0
+          2
+          'Санкт-Петербург'
+          0
+          3
+          'Нижний Новгород'
+          0
+          4
+          'Казань'
+          0
+          5
+          'Самара'
+          0
+          6
+          'Орёл'
+          1
+          0
+          '1 месяц'
+          2
+          0
+          '2 месяц'
+          3
+          0
+          '3 месяц'
+          4
+          0
+          '4 месяц'
+        )
+      end
+      object CheckBox5: TCheckBox
+        Left = 88
+        Height = 24
+        Top = 232
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+      end
+      object Button11: TButton
+        Left = 632
+        Height = 31
+        Top = 264
+        Width = 94
+        Caption = 'Очистка'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button11Click
+      end
+      object Button12: TButton
+        Left = 352
+        Height = 40
+        Top = 272
+        Width = 232
+        Caption = 'Расчёт прироста населения'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Button12Click
+      end
+      object StringGrid6: TStringGrid
+        Left = 624
+        Height = 192
+        Top = 23
+        Width = 156
+        ColCount = 1
+        FixedCols = 0
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        RowCount = 7
+        ScrollBars = ssNone
+        TabOrder = 4
+        ColWidths = (
+          153
+        )
+        RowHeights = (
+          27
+          27
+          27
+          27
+          27
+          27
+          27
+        )
+        Cells = (
+          1
+          0
+          0
+          'Прирост населения'
+        )
+      end
+      object Button13: TButton
+        Left = 632
+        Height = 31
+        Top = 232
+        Width = 94
+        Caption = 'Сохранить'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 5
+        OnClick = Button13Click
+      end
+      object Button16: TButton
+        Left = 632
+        Height = 31
+        Top = 296
+        Width = 94
+        Caption = 'Загрузить'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 6
+        OnClick = Button16Click
+      end
+      object Button17: TButton
+        Left = 400
+        Height = 39
+        Top = 225
+        Width = 150
+        Caption = 'Генерация данных'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 7
+        OnClick = Button17Click
+      end
+      object Memo2: TMemo
+        Left = 88
+        Height = 113
+        Top = 272
+        Width = 188
+        Lines.Strings = (
+          'Memo2'
+        )
+        TabOrder = 8
+        Visible = False
+        WordWrap = False
+      end
+    end
+    object TabSheet7: TTabSheet
+      Caption = 'Доп задача 3'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid7: TStringGrid
+        Left = 144
+        Height = 85
+        Top = 80
+        Width = 451
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        RowCount = 3
+        TabOrder = 0
+        ColWidths = (
+          89
+          90
+          89
+          86
+          93
+        )
+      end
+      object Label5: TLabel
+        Left = 144
+        Height = 22
+        Top = 184
+        Width = 139
+        AutoSize = False
+        Caption = 'Шаблон для поиска'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+      end
+      object Button14: TButton
+        Left = 328
+        Height = 47
+        Top = 232
+        Width = 350
+        Caption = 'Нахождение количества одинаковых элементов'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 1
+        OnClick = Button14Click
+      end
+      object Button15: TButton
+        Left = 717
+        Height = 31
+        Top = 118
+        Width = 94
+        Caption = 'Очистка'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button15Click
+      end
+      object Edit1: TEdit
+        Left = 312
+        Height = 28
+        Top = 184
+        Width = 244
+        TabOrder = 3
+      end
+      object Label6: TLabel
+        Left = 144
+        Height = 107
+        Top = 304
+        Width = 608
+        AutoSize = False
+      end
+      object Label10: TLabel
+        Left = 304
+        Height = 31
+        Top = 24
+        Width = 369
+        Caption = 'Поиск одинаковых элементов'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object TabSheet8: TTabSheet
+      Caption = 'Доп задача 7'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid8: TStringGrid
+        Left = 0
+        Height = 271
+        Top = 23
+        Width = 824
+        ColCount = 6
+        FixedCols = 0
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        ParentFont = False
+        RowCount = 10
+        TabOrder = 0
+        ColWidths = (
+          160
+          127
+          131
+          78
+          180
+          144
+        )
+        RowHeights = (
+          27
+          27
+          27
+          27
+          27
+          27
+          27
+          26
+          26
+          26
+        )
+        Cells = (
+          6
+          0
+          0
+          'Ф.И.О'
+          1
+          0
+          'Количество смен'
+          2
+          0
+          'Стоимость смены'
+          3
+          0
+          '% премии'
+          4
+          0
+          'Уральский коэффициент'
+          5
+          0
+          'Подоходный налог'
+        )
+      end
+      object StringGrid9: TStringGrid
+        Left = 824
+        Height = 271
+        Top = 23
+        Width = 175
+        ColCount = 1
+        FixedCols = 0
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        RowCount = 10
+        TabOrder = 1
+        ColWidths = (
+          171
+        )
+        RowHeights = (
+          27
+          27
+          27
+          27
+          27
+          27
+          27
+          26
+          26
+          26
+        )
+        Cells = (
+          1
+          0
+          0
+          '           Зарплата'
+        )
+      end
+      object CheckBox6: TCheckBox
+        Left = 8
+        Height = 24
+        Top = 304
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 2
+      end
+      object Button18: TButton
+        Left = 216
+        Height = 63
+        Top = 344
+        Width = 198
+        Caption = 'Расчет зарплаты'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Button18Click
+      end
+      object Button19: TButton
+        Left = 8
+        Height = 31
+        Hint = 'Сохранить данные'
+        Top = 344
+        Width = 94
+        Caption = 'Сохранить '
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 4
+        OnClick = Button19Click
+      end
+      object Button20: TButton
+        Left = 8
+        Height = 31
+        Hint = 'Загрузить данные'
+        Top = 376
+        Width = 94
+        Caption = 'Загрузить'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 5
+        OnClick = Button20Click
+      end
+      object Button21: TButton
+        Left = 120
+        Height = 31
+        Hint = 'Добавить новую запись'
+        Top = 344
+        Width = 72
+        Caption = '+'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 6
+        OnClick = Button21Click
+      end
+      object Button22: TButton
+        Left = 120
+        Height = 31
+        Hint = 'Удалить запись'
+        Top = 376
+        Width = 72
+        Caption = '-'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 7
+        OnClick = Button22Click
+      end
+      object Button23: TButton
+        Left = 272
+        Height = 31
+        Top = 304
+        Width = 94
+        Caption = 'Генерация'
+        TabOrder = 8
+        OnClick = Button23Click
+      end
+      object Memo3: TMemo
+        Left = 424
+        Height = 113
+        Top = 304
+        Width = 188
+        Lines.Strings = (
+          'Memo3'
+        )
+        ParentShowHint = False
+        TabOrder = 9
+        Visible = False
+      end
+    end
+    object TabSheet9: TTabSheet
+      Caption = 'Доп задача 4'
+      ClientHeight = 455
+      ClientWidth = 1072
+      object StringGrid10: TStringGrid
+        Left = 224
+        Height = 85
+        Top = 80
+        Width = 611
+        ColCount = 7
+        FixedCols = 0
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+        RowCount = 3
+        TabOrder = 0
+        ColWidths = (
+          89
+          90
+          89
+          86
+          93
+          80
+          80
+        )
+      end
+      object CheckBox7: TCheckBox
+        Left = 224
+        Height = 24
+        Top = 208
+        Width = 234
+        Caption = 'Удалять ошибочные значения'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+      end
+      object Button24: TButton
+        Left = 515
+        Height = 47
+        Hint = 'Выдает столбцы, числа в которых положительны и кратны 3-м'
+        Top = 192
+        Width = 320
+        Caption = 'Вывод положительных чисел кратных 3-м'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+        OnClick = Button24Click
+      end
+      object Button25: TButton
+        Left = 848
+        Height = 24
+        Top = 112
+        Width = 94
+        Caption = 'Очистка'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Button25Click
+      end
+      object Label7: TLabel
+        Left = 48
+        Height = 144
+        Top = 256
+        Width = 544
+        AutoSize = False
+      end
+      object Label12: TLabel
+        Left = 272
+        Height = 38
+        Top = 24
+        Width = 519
+        Caption = 'Задача проверяет столбцы, и если в нем есть хотя бы один элемент'#13#10'положительный и кратный 3-м, то выводит номер этого столбца'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -17
+        Font.Name = 'Times New Roman'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 958
+    Top = 392
+    object MenuItem1: TMenuItem
+      Caption = 'Об авторе'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuItem2Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'csv|*.csv'
+    Left = 870
+    Top = 392
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'csv|*.csv'
+    Left = 782
+    Top = 392
+  end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 712
+    Top = 392
+  end
+  object TimerZP: TTimer
+    OnTimer = TimerZPTimer
+    Left = 648
+    Top = 392
+  end
+end

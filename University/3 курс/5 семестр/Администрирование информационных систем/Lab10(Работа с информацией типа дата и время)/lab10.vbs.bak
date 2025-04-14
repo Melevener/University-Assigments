@@ -1,0 +1,20 @@
+Dim startDate
+startDate = "01/01/2001 00:00:00"
+
+Dim currentDate
+currentDate = Now
+
+Dim diffInSeconds, diffInMinutes, diffInHours, diffInDays
+diffInSeconds = DateDiff("s", startDate, currentDate)
+diffInMinutes = DateDiff("n", startDate, currentDate)
+diffInHours = DateDiff("h", startDate, currentDate)
+diffInDays = DateDiff("d", startDate, currentDate)
+
+MsgBox "Исходные данные:" & vbLF & _
+       "Дата начала 21 века: " & startDate & vbLF & _
+       "Текущая дата: " & currentDate & vbLF & _
+       vbLF & "Результат:" & vbLF & _
+       "Прошло дней: " & diffInDays & vbLF & _
+       "Прошло часов: " & diffInHours & vbLF & _
+       "Прошло минут: " & diffInMinutes & vbLF & _
+       "Прошло секунд: " & diffInSeconds

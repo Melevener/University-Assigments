@@ -1,0 +1,143 @@
+Dim dbPath
+Dim cleanDbPath
+Dim tableName
+Dim filePath
+Dim cleanFilePath
+Dim conn, rs, fso, file
+Dim fileExt
+Dim db
+Dim tableExists
+Dim isValidInput
+
+Do
+    isValidInput = True
+    dbPath = InputBox("Введите полный путь к файлу Access (.accdb):", "Открыть базу данных Access")
+
+    If dbPath = False Then
+        WScript.Quit
+    ElseIf dbPath = "" Then
+        MsgBox "Путь к базе данных не был введен.", vbExclamation, "Ошибка"
+        isValidInput = False
+    Else
+        fileExt = LCase(Trim(Right(dbPath, Len(dbPath) - InStrRev(dbPath, "."))))
+        fileExt = Replace(fileExt, " ", "")
+        cleanDbPath = LCase(Left(dbPath, InStrRev(dbPath, "."))) & fileExt
+
+        If fileExt <> "accdb" Then
+            MsgBox "Файл должен быть в формате .accdb. Пожалуйста, введите корректный путь.", vbExclamation, "Ошибка"
+            isValidInput = False
+        ElseIf Not CreateObject("Scripting.FileSystemObject").FileExists(cleanDbPath) Then
+            MsgBox "Файл базы данных не найден. Убедитесь, что путь введен правильно.", vbExclamation, "Ошибка"
+            isValidInput = False
+        End If
+    End If
+Loop Until isValidInput
+
+Set conn = CreateObject("ADODB.Connection")
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+On Error Resume Next
+conn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & cleanDbPath
+
+If Err.Number <> 0 Then
+    MsgBox "Не удалось открыть базу данных. Возможно, у вас нет прав для доступа к этому файлу.", vbCritical, "Ошибка"
+    Err.Clear
+    WScript.Quit
+End If
+On Error GoTo 0
+
+On Error Resume Next
+Set db = CreateObject("DAO.DBEngine.120").OpenDatabase(cleanDbPath)
+If Err.Number <> 0 Then
+    MsgBox "Ошибка при доступе к базе данных. Возможно, у вас нет прав для работы с этим файлом.", vbCritical, "Ошибка"
+    Err.Clear
+    WScript.Quit
+End If
+On Error GoTo 0
+
+Do
+    isValidInput = True
+    tableName = InputBox("Введите имя таблицы для экспорта:", "Имя таблицы")
+    
+    If tableName = False Then
+        WScript.Quit
+    ElseIf tableName = "" Then
+        MsgBox "Имя таблицы не было введено.", vbExclamation, "Ошибка"
+        isValidInput = False
+    End If
+
+    tableExists = False
+    Dim tbl
+    For Each tbl In db.TableDefs
+        If tbl.Name = tableName Then
+            tableExists = True
+            Exit For
+        End If
+    Next
+    
+    If Not tableExists Then
+        MsgBox "Таблица '" & tableName & "' не существует в базе данных. Пожалуйста, попробуйте снова.", vbExclamation, "Ошибка"
+        isValidInput = False
+    End If
+Loop Until tableExists
+
+Do
+    isValidInput = True
+    filePath = InputBox("Введите полный путь для сохранения выходного файла (.txt):", "Сохранить файл")
+    
+    If filePath = False Then
+        WScript.Quit
+    ElseIf filePath = "" Then
+        MsgBox "Путь для сохранения файла не был введен.", vbExclamation, "Ошибка"
+        isValidInput = False
+    Else
+        fileExt = LCase(Trim(Right(filePath, Len(filePath) - InStrRev(filePath, "."))))
+        fileExt = Replace(fileExt, " ", "")
+        cleanFilePath = LCase(Left(filePath, InStrRev(filePath, "."))) & fileExt
+        
+        If fileExt <> "txt" Then
+            MsgBox "Файл должен быть в формате .txt. Пожалуйста, введите корректный путь.", vbExclamation, "Ошибка"
+            isValidInput = False
+        End If
+    End If
+Loop Until isValidInput
+
+Set rs = CreateObject("ADODB.Recordset")
+rs.Open "SELECT * FROM " & tableName, conn, 1, 1
+
+On Error Resume Next
+Set file = fso.CreateTextFile(cleanFilePath, True)
+If Err.Number <> 0 Then
+    MsgBox "Не удалось создать файл. Возможно, у вас нет прав для записи в указанное место.", vbCritical, "Ошибка"
+    Err.Clear
+    WScript.Quit
+End If
+On Error GoTo 0
+
+Do Until rs.EOF
+    Dim recordLine
+    recordLine = ""
+    
+    Dim i
+    For i = 0 To rs.Fields.Count - 1
+        recordLine = recordLine & rs.Fields(i).Value & vbTab
+    Next
+    
+    On Error Resume Next
+    file.WriteLine recordLine
+    If Err.Number <> 0 Then
+        MsgBox "Ошибка при записи данных в файл. Проверьте доступные права.", vbCritical, "Ошибка"
+        Err.Clear
+        Exit Do
+    End If
+    On Error GoTo 0
+    
+    rs.MoveNext
+Loop
+
+rs.Close
+conn.Close
+file.Close
+db.Close
+
+MsgBox "Данные успешно записаны в файл: " & cleanFilePath
